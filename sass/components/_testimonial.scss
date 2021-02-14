@@ -1,0 +1,212 @@
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media only screen and (max-width: 75em) {
+        height: auto;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
+
+    @media only screen and (max-width: 75em) {
+        height: auto;
+        margin-top: 6rem;
+        margin-bottom: 6rem;
+    }
+
+    .testimonials {
+        width: calc((1110 * 100%) / 1440);
+        //   height: calc((572 * 100%) / 900);
+        height: auto;
+
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, minmax(25rem, 1fr));
+        gap: 3rem;
+
+        @media only screen and (max-width: 75em) {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, minmax(25rem, 1fr));
+        }
+
+        @media only screen and (max-width: 50em) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: min-content;
+        }
+
+        @media only screen and (max-width: 25em) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: min-content;
+        }
+
+        .testimonial {
+            padding: 2.4rem 3.15rem 2.2rem 3rem;
+            border-radius: 0.8rem;
+            color: $color-primary-white;
+            line-height: 1;
+
+            display: flex;
+            flex-direction: column;
+            box-shadow: 3rem 4rem 5rem rgba(0, 0, 0, 0.1);
+
+            &__profile {
+                display: flex;
+                align-items: center;
+
+                margin-bottom: 2.5rem;
+                z-index: 2;
+
+                .profile__pic {
+                    border-radius: 50%;
+                    height: 3rem;
+                    width: 3rem;
+                    margin-right: 1.5rem;
+                }
+
+                .profile__details {
+                    .name {
+                        font-size: 1.45rem;
+                        font-weight: 500;
+                        margin-bottom: 0.4rem;
+                    }
+
+                    .status {
+                        font-size: 1.2rem;
+                        opacity: 0.5;
+                        text-transform: capitalize;
+                        font-weight: 400;
+                    }
+                }
+            }
+
+            &__heading {
+                font-size: 2rem;
+                font-weight: 600;
+                line-height: 1.2;
+                margin-bottom: 2.5rem;
+                z-index: 2;
+            }
+
+            &__text {
+                font-size: 1.35rem;
+                line-height: 1.5;
+                font-weight: 400;
+                opacity: 0.7;
+                z-index: 2;
+            }
+
+            &-1 {
+                background-color: $color-primary-violet;
+                grid-column: 1 / span 2;
+                position: relative;
+
+                .profile__pic {
+                    border: 2px solid rgba($color-neutral-gray, 0.5);
+                }
+
+                &__quotation {
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    right: 8.4rem;
+
+                    @media only screen and (max-width: 50em) {
+                        right: 4rem;
+                    }
+
+                    @media only screen and (max-width: 25em) {
+                        right: 3rem;
+                    }
+                }
+
+                @media only screen and (max-width: 50em) {
+                    grid-column: 1 / span 1;
+                    grid-row: 1 / span 1;
+                }
+
+                @media only screen and (max-width: 25em) {
+                    grid-column: 1 / span 1;
+                    grid-row: 1 / span 2;
+                }
+            }
+
+            &-2 {
+                background-color: $color-primary-gBlue;
+                grid-column: 3 / span 1;
+
+                @media only screen and (max-width: 50em) {
+                    grid-column: 1 / span 1;
+                    grid-row: 2 / span 1;
+                }
+
+                @media only screen and (max-width: 25em) {
+                    grid-column: 1 / span 1;
+                    grid-row: 3 / span 1;
+                }
+            }
+
+            &-3 {
+                background-color: $color-primary-white;
+                grid-column: 1 / span 1;
+
+                color: $color-primary-gBlue;
+
+                @media only screen and (max-width: 50em) {
+                    grid-column: 1 / span 1;
+                    grid-row: 3 / span 1;
+                }
+
+                @media only screen and (max-width: 25em) {
+                    grid-column: 1 / span 1;
+                    grid-row: 4 / span 1;
+                }
+            }
+
+            &-4 {
+                background-color: $color-primary-blackBlue;
+                grid-column: 2 / span 2;
+
+                .profile__pic {
+                    border: 2px solid rgba($color-primary-violet, 1);
+                }
+
+                @media only screen and (max-width: 50em) {
+                    grid-column: 1 / span 1;
+                    grid-row: 4 / span 1;
+                }
+
+                @media only screen and (max-width: 25em) {
+                    grid-column: 1 / span 1;
+                    grid-row: 5 / span 2;
+                }
+            }
+
+            &-5 {
+                background-color: $color-primary-white;
+                grid-column: 4 / span 1;
+                grid-row: 1 / span 2;
+
+                height: 100%;
+                color: $color-primary-gBlue;
+
+                @media only screen and (max-width: 75em) {
+                    grid-column: 1 / -1;
+                    grid-row: 3 / span 1;
+                }
+
+                @media only screen and (max-width: 50em) {
+                    grid-column: 1 / span 1;
+                    grid-row: 5 / span 1;
+                }
+
+                @media only screen and (max-width: 25em) {
+                    grid-column: 1 / span 1;
+                    grid-row: 7 / span 2;
+                }
+            }
+        }
+    }
+}
